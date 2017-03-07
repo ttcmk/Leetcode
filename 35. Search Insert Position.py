@@ -12,7 +12,7 @@ Here are few examples.
 # one solution:
 class Solution(object):
     def searchInsert(self, nums, target):
-        if nums[-1] < target:
+        if nums[len(nums) - 1] < target: #千万别用nums[-1],时间复杂度很高！
             return len(nums)
         else:
             for i in range(len(nums)):
