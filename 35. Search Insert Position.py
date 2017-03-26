@@ -37,7 +37,7 @@ class Solution(object):
             if nums[mid] > target:
                 end = mid - 1
                 if end >= 0:
-                    if nums[end] < target: #同下
+                    if nums[end] < target: #同下,else: 继续
                         return end + 1
                 else:
                     return 0
@@ -45,7 +45,7 @@ class Solution(object):
             elif nums[mid] < target:
                 start = mid + 1
                 if start < len(nums):
-                    if nums[start] > target: #important for example[1 5 6 9] target = 7; 如果没有这句，出错
+                    if nums[start] > target: #important for example[1 5 6 9] target = 7; 如果没有这句，出错；else：继续
                         return start
                 else:
                     return len(nums)
